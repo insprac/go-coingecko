@@ -1,4 +1,4 @@
-package coingecko
+package v3
 
 func ListCoins() ([]ListedCoin, error) {
 	var coins []ListedCoin
@@ -6,7 +6,7 @@ func ListCoins() ([]ListedCoin, error) {
 	return coins, err
 }
 
-func ListCoinMarkets() ([]Market, error) {
+func ListMarkets() ([]Market, error) {
 	var markets []Market
 	err := get("/coins/markets", &markets)
 	return markets, err

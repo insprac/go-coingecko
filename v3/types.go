@@ -1,4 +1,4 @@
-package coingecko
+package v3
 
 type ListedCoin struct {
 	ID     string `json:"id"`
@@ -46,7 +46,7 @@ type CoinLinks struct {
 	AnnouncementURL             []string `json:"announcement_url"`
 	TwitterScreenName           string   `json:"twitter_screen_name"`
 	FacebookUsername            string   `json:"facebook_username"`
-	BitcointalkThreadIdentifier string   `json:"facebook_username"`
+	BitcointalkThreadIdentifier string   `json:"bitcointalk_thread_identifier"`
 	TelegramChannelIdentifier   string   `json:"telegram_channel_identifier"`
 	SubredditURL                string   `json:"subreddit_url"`
 	ReposURL                    RepoURLs `json:"repos_url"`
@@ -97,9 +97,9 @@ type CoinMarketData struct {
 	PriceChangePercentage1yInCurrency      map[string]float64 `json:"price_change_percentage_1y_in_currency"`
 	MarketCapChange24hInCurrency           map[string]float64 `json:"market_cap_change_24h_in_currency"`
 	MarketCapChangePercentage24hInCurrency map[string]float64 `json:"market_cap_change_percentage_24h_in_currency"`
-	TotalSupply                            uint64             `json:"total_supply"`
-	MaxSupply                              uint64             `json:"max_supply"`
-	CirculatingSupply                      uint64             `json:"circulating_supply"`
+	TotalSupply                            float64            `json:"total_supply"`
+	MaxSupply                              float64            `json:"max_supply"`
+	CirculatingSupply                      float64            `json:"circulating_supply"`
 	LastUpdated                            string             `json:"last_updated"`
 }
 
@@ -196,9 +196,9 @@ type Market struct {
 	PriceChangePercentage24h     float64 `json:"price_change_percentage_24h"`
 	MarketCapChange24h           int16   `json:"market_cap_change_24h"`
 	MarketCapChangePercentage24h float64 `json:"market_cap_change_percentage_24h"`
-	CirculatingSupply            uint64  `json:"circulating_supply"`
-	TotalSupply                  uint64  `json:"total_supply"`
-	MaxSupply                    uint64  `json:"max_supply"`
+	CirculatingSupply            float64 `json:"circulating_supply"`
+	TotalSupply                  float64 `json:"total_supply"`
+	MaxSupply                    float64 `json:"max_supply"`
 	ATH                          float64 `json:"ath"`
 	ATHChangePercentage          float64 `json:"athChange_percentage"`
 	ATHDate                      string  `json:"ath_date"`

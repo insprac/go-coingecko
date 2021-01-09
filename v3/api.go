@@ -1,4 +1,4 @@
-package coingecko
+package v3
 
 import (
 	"encoding/json"
