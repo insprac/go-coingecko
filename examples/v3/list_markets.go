@@ -6,11 +6,11 @@ import (
 )
 
 func main() {
-	coin, err := coingecko.GetCoin("bitcoin")
+	markets, err := coingecko.ListMarkets()
 
 	if err == nil {
-		fmt.Println(coin)
+		fmt.Println(markets)
 	} else {
-		fmt.Println("Failed to get coin", err)
+		fmt.Println("Failed to list markets", err)
 	}
 }
