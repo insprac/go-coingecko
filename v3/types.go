@@ -159,7 +159,7 @@ type CoinTicker struct {
 	Target                 string             `json:"target"`
 	Market                 CoinTickerMarket   `json:"market"`
 	Last                   float64            `json:"last"`
-	Volume                 uint64             `json:"volume"`
+	Volume                 float64            `json:"volume"`
 	ConvertedLast          map[string]float64 `json:"converted_last"`
 	TrustScore             string             `json:"trust_score"`
 	BidAskSpreadPercentage float64            `json:"bid_ask_spread_percentage"`
@@ -189,7 +189,7 @@ type Market struct {
 	MarketCap                    uint64  `json:"market_cap"`
 	MarketCapRank                uint16  `json:"market_cap_rank"`
 	FullyDilutedValuation        uint64  `json:"fully_diluted_valuation"`
-	TotalVolume                  uint64  `json:"total_volume"`
+	TotalVolume                  float64 `json:"total_volume"`
 	High24h                      float64 `json:"high_24h"`
 	Low24h                       float64 `json:"low_24h"`
 	PriceChange24h               float64 `json:"price_change_24h"`
