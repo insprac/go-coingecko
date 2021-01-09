@@ -159,7 +159,7 @@ type CoinTicker struct {
 	Target                 string             `json:"target"`
 	Market                 CoinTickerMarket   `json:"market"`
 	Last                   float64            `json:"last"`
-	Volume                 string             `json:"volume"`
+	Volume                 uint64             `json:"volume"`
 	ConvertedLast          map[string]float64 `json:"converted_last"`
 	TrustScore             string             `json:"trust_score"`
 	BidAskSpreadPercentage float64            `json:"bid_ask_spread_percentage"`
