@@ -32,3 +32,9 @@ type GetCoinHistoryParams struct {
 	Date         string `q:"date" required:"true"`
 	Localization bool   `q:"localization"`
 }
+
+type GetCoinMarketChartParams struct {
+	VSCurrency string `q:"vs_currency" required:"true"`
+	Days       uint16 `q:"days" required:"true"`
+	Interval   string `q:"interval"`
+}
