@@ -214,3 +214,48 @@ type ReturnOnInvestment struct {
 	Currency   string  `json:"currency"`
 	Percentage float64 `json:"percentage"`
 }
+
+type CoinTickers struct {
+	Name    string              `json:"name"`
+	Tickers []CoinTickersTicker `json:"tickers"`
+}
+
+type CoinTickersTicker struct {
+	Base                   string                           `json:"base"`
+	Target                 string                           `json:"target"`
+	Market                 CoinTickersTickerMarket          `json:"market"`
+	Last                   float64                          `json:"last"`
+	Volume                 float64                          `json:"volume"`
+	ConvertedLast          CoinTickersTickerConvertedLast   `json:"converted_last"`
+	ConvertedVolume        CoinTickersTickerConvertedVolume `json:"converted_volume"`
+	TrustScore             string                           `json:"trust_score"`
+	BidAskSpreadPercentage float64                          `json:"bid_ask_spread_percentage"`
+	Timestamp              string                           `json:"timestamp"`
+	LastTradedAt           string                           `json:"last_traded_at"`
+	LastFetchAt            string                           `json:"last_fetch_at"`
+	IsAnomaly              bool                             `json:"is_anomaly"`
+	IsStale                bool                             `json:"is_stale"`
+	TradeURL               string                           `json:"trade_url"`
+	TokenInfoURL           string                           `json:"token_info_url"`
+	CoinID                 string                           `json:"coin_id"`
+	TargetCoinID           string                           `json:"target_coin_id"`
+}
+
+type CoinTickersTickerMarket struct {
+	Name                string `json:"name"`
+	Identifier          string `json:"identifier"`
+	HasTradingIncentive bool   `json:"has_trading_incentive"`
+	Logo                string `json:"logo"`
+}
+
+type CoinTickersTickerConvertedLast struct {
+	BTC float64 `json:"btc"`
+	ETH float64 `json:"eth"`
+	USD float64 `json:"usd"`
+}
+
+type CoinTickersTickerConvertedVolume struct {
+	BTC uint32 `json:"btc"`
+	ETH uint32 `json:"eth"`
+	USD uint32 `json:"usd"`
+}

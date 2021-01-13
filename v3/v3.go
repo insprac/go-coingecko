@@ -12,8 +12,17 @@ func ListMarkets(params ListMarketsParams) ([]Market, error) {
 	return markets, err
 }
 
-func GetCoin(id string) (Coin, error) {
+func GetCoin(id string, params GetCoinParams) (Coin, error) {
 	var coin Coin
-	err := get("/coins/"+id, &coin)
+	err := getWithParams("/coins/"+id, params, &coin)
 	return coin, err
+}
+
+func ListCoinTickers(
+	id string,
+	params ListCoinTickersParams,
+) (CoinTickers, error) {
+	var tickers CoinTickers
+	err := getWithParams("/coins/"+id+"/tickers", params, &tickers)
+	return tickers, err
 }
