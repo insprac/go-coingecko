@@ -49,3 +49,8 @@ type GetCoinStatusUpdatesParams struct {
 	PerPage uint16 `q:"per_page"`
 	Page    uint16 `q:"page"`
 }
+
+type GetCoinOHLCParams struct {
+	VSCurrency string `q:"vs_currency" required:"true"`
+	Days       uint16 `q:"days" required:"true"`
+}

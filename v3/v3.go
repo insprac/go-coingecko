@@ -47,3 +47,9 @@ func GetCoinStatusUpdates(id string, params GetCoinStatusUpdatesParams) (CoinSta
 	err := getWithParams("/coins/"+id+"/status_updates", params, &statusUpdates)
 	return statusUpdates, err
 }
+
+func GetCoinOHLC(id string, params GetCoinOHLCParams) (CoinOHLC, error) {
+	var ohlc CoinOHLC
+	err := getWithParams("/coins/"+id+"/ohlc", params, &ohlc)
+	return ohlc, err
+}
