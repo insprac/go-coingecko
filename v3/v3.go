@@ -6,8 +6,8 @@ func ListCoins() ([]ListedCoin, error) {
 	return coins, err
 }
 
-func ListMarkets(params ListMarketsParams) ([]Market, error) {
-	var markets []Market
+func ListCoinMarkets(params ListCoinMarketsParams) ([]CoinMarket, error) {
+	var markets []CoinMarket
 	err := getWithParams("/coins/markets", params, &markets)
 	return markets, err
 }

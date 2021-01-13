@@ -180,7 +180,7 @@ type CoinTickerMarket struct {
 	HasTradingIncentive bool   `json:"has_trading_incentive"`
 }
 
-type Market struct {
+type CoinMarket struct {
 	ID                           string             `json:"id"`
 	Symbol                       string             `json:"symbol"`
 	Name                         string             `json:"name"`

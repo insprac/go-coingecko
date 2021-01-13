@@ -1,6 +1,6 @@
 package v3
 
-type ListMarketsParams struct {
+type ListCoinMarketsParams struct {
 	VSCurrency            string   `q:"vs_currency" required:"true"`
 	IDs                   []string `q:"ids"`
 	Category              string   `q:"category"`
