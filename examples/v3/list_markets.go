@@ -6,7 +6,8 @@ import (
 )
 
 func main() {
-	markets, err := coingecko.ListMarkets()
+	params := coingecko.ListMarketsParams{VSCurrency: "nzd"}
+	markets, err := coingecko.ListMarkets(params)
 
 	if err == nil {
 		fmt.Println(markets)

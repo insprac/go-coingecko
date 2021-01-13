@@ -4,6 +4,7 @@ import (
 	"encoding/json"
 	"errors"
 	"fmt"
+	"github.com/insprac/qe"
 	"io/ioutil"
 	"net/http"
 )
@@ -36,6 +37,20 @@ func get(path string, data interface{}) error {
 	}
 
 	return json.Unmarshal(bodyBytes, &data)
+}
+
+func getWithParams(path string, params interface{}, data interface{}) error {
+	queryString, err := qe.Marshal(params)
+
+	if err != nil {
+		return err
+	}
+
+	if queryString == "" {
+		return get(path, data)
+	} else {
+		return get(path+"?"+queryString, data)
+	}
 }
 
 func newError(message string, args ...interface{}) error {
