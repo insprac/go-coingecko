@@ -18,11 +18,14 @@ func GetCoin(id string, params GetCoinParams) (Coin, error) {
 	return coin, err
 }
 
-func ListCoinTickers(
-	id string,
-	params ListCoinTickersParams,
-) (CoinTickers, error) {
+func ListCoinTickers(id string, params ListCoinTickersParams) (CoinTickers, error) {
 	var tickers CoinTickers
 	err := getWithParams("/coins/"+id+"/tickers", params, &tickers)
 	return tickers, err
+}
+
+func GetCoinHistory(id string, params GetCoinHistoryParams) (CoinHistory, error) {
+	var history CoinHistory
+	err := getWithParams("/coins/"+id+"/history", params, &history)
+	return history, err
 }

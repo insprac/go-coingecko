@@ -32,6 +32,8 @@ type Coin struct {
 	LiquidityScore               float64                 `json:"liquidity_score"`
 	PublicInterestScore          float64                 `json:"public_interest_score"`
 	MarketData                   CoinMarketData          `json:"market_data"`
+	CommunityData                CoinCommunityData       `json:"community_data"`
+	DeveloperData                CoinDeveloperData       `json:"developer_data"`
 	PublicInterestStats          CoinPublicInterestStats `json:"public_interest_stats"`
 	StatusUpdates                []CoinStatusUpdate      `json:"status_updates"`
 	LastUpdated                  string                  `json:"last_updated"`
@@ -258,4 +260,31 @@ type CoinTickersTickerConvertedVolume struct {
 	BTC uint32 `json:"btc"`
 	ETH uint32 `json:"eth"`
 	USD uint32 `json:"usd"`
+}
+
+type CoinHistory struct {
+	ID                  string                   `json:"id"`
+	Symbol              string                   `json:"symbol"`
+	Name                string                   `json:"name"`
+	Localization        map[string]string        `json:"localization"`
+	Image               ImageLinks               `json:"image"`
+	MarketData          CoinHistoryMarketData    `json:"market_data"`
+	CommunityData       CoinHistoryCommunityData `json:"community_data"`
+	DeveloperData       CoinDeveloperData        `json:"developer_data"`
+	PublicInterestStats CoinPublicInterestStats  `json:"public_interest_stats"`
+}
+
+type CoinHistoryMarketData struct {
+	CurrentPrice map[string]float64 `json:"current_price"`
+	MarketCap    map[string]float64 `json:"market_cap"`
+	TotalVolume  map[string]float64 `json:"total_volume"`
+}
+
+type CoinHistoryCommunityData struct {
+	FacebookLikes            uint64  `json:"facebook_likes"`
+	TwitterFollowers         uint64  `json:"twitter_followers"`
+	RedditAveragePosts48h    float64 `json:"reddit_average_posts_48h"`
+	RedditAverageComments48h float64 `json:"reddit_average_comments_48h"`
+	RedditSubscribers        uint64  `json:"reddit_subscribers"`
+	RedditAccountsActive48h  string  `json:"reddit_accounts_active_48h"`
 }

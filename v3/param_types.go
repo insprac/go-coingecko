@@ -27,3 +27,8 @@ type ListCoinTickersParams struct {
 	Order               string `q:"order"`
 	Depth               string `q:"depth"`
 }
+
+type GetCoinHistoryParams struct {
+	Date         string `q:"date" required:"true"`
+	Localization bool   `q:"localization"`
+}
