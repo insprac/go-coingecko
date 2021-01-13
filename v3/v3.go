@@ -1,12 +1,12 @@
 package v3
 
-func ListCoins() ([]ListedCoin, error) {
+func GetCoins() ([]ListedCoin, error) {
 	var coins []ListedCoin
 	err := get("/coins/list", &coins)
 	return coins, err
 }
 
-func ListCoinMarkets(params ListCoinMarketsParams) ([]CoinMarket, error) {
+func GetCoinMarkets(params GetCoinMarketsParams) ([]CoinMarket, error) {
 	var markets []CoinMarket
 	err := getWithParams("/coins/markets", params, &markets)
 	return markets, err
@@ -18,7 +18,7 @@ func GetCoin(id string, params GetCoinParams) (Coin, error) {
 	return coin, err
 }
 
-func ListCoinTickers(id string, params ListCoinTickersParams) (CoinTickers, error) {
+func GetCoinTickers(id string, params GetCoinTickersParams) (CoinTickers, error) {
 	var tickers CoinTickers
 	err := getWithParams("/coins/"+id+"/tickers", params, &tickers)
 	return tickers, err
@@ -40,4 +40,10 @@ func GetCoinMarketChartRange(id string, params GetCoinMarketChartRangeParams) (C
 	var marketChart CoinMarketChart
 	err := getWithParams("/coins/"+id+"/market_chart/range", params, &marketChart)
 	return marketChart, err
+}
+
+func GetCoinStatusUpdates(id string, params GetCoinStatusUpdatesParams) (CoinStatusUpdates, error) {
+	var statusUpdates CoinStatusUpdates
+	err := getWithParams("/coins/"+id+"/status_updates", params, &statusUpdates)
+	return statusUpdates, err
 }

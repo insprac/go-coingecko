@@ -1,6 +1,6 @@
 package v3
 
-type ListCoinMarketsParams struct {
+type GetCoinMarketsParams struct {
 	VSCurrency            string   `q:"vs_currency" required:"true"`
 	IDs                   []string `q:"ids"`
 	Category              string   `q:"category"`
@@ -20,7 +20,7 @@ type GetCoinParams struct {
 	Sparkline     bool   `q:"sparkline"`
 }
 
-type ListCoinTickersParams struct {
+type GetCoinTickersParams struct {
 	ExchangeIDs         string `q:"exchange_ids"`
 	IncludeExchangeLogo bool   `q:"include_exchange_logo"`
 	Page                uint16 `q:"page"`
@@ -41,6 +41,11 @@ type GetCoinMarketChartParams struct {
 
 type GetCoinMarketChartRangeParams struct {
 	VSCurrency string `q:"vs_currency" required:"true"`
-	From       uint64 `q:"from" required:"true"`
-	To         uint64 `q:"to" required:"true"`
+	From       int64  `q:"from" required:"true"`
+	To         int64  `q:"to" required:"true"`
+}
+
+type GetCoinStatusUpdatesParams struct {
+	PerPage uint16 `q:"per_page"`
+	Page    uint16 `q:"page"`
 }
